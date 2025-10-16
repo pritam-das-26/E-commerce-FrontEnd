@@ -29,12 +29,12 @@ const FeaturesSection = () => {
           </p>
         </div>
 
-        <div className="flex flex-col items-center">
+        <div className="flex flex-col items-center pb-8">
           <div className="p-4 mb-4 rounded-full">
             <HiOutlineCreditCard className="text-xl" />
           </div>
           <h4 className="mb-2 tracking-tighter">SECCURE CHECKOUT</h4>
-          <p className="text-sm tracking-tighter text-gray-600">
+          <p className="text-sm tracking-tighter text-gray-600 ">
             100% secure checkout process
           </p>
         </div>

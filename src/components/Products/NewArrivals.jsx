@@ -39,7 +39,7 @@ const NewArrivals = () => {
       price: 120,
       images: [
         {
-          url: "https://media.powerlook.in/catalog/product/d/p/dp21172830.jpg?aio=w-640",
+          url: "https://image.hm.com/assets/hm/01/22/012296fb34bf6032135318932fc106e28236b54c.jpg?imwidth=768",
           altText: "Denim Jacket",
         },
       ],
