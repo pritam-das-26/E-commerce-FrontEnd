@@ -6,6 +6,7 @@ import {
   createProduct,
   deleteProduct,
 } from "../../redux/slices/adminProductSlice";
+import Loader from "../Loader";
 
 const ProductManagement = () => {
   const dispatch = useDispatch();
@@ -41,52 +42,51 @@ const ProductManagement = () => {
   };
 
   // create product
-const handleCreate = (e) => {
-  e.preventDefault();
-  const token = localStorage.getItem("userToken");
-  if (!token) {
-    alert("You must be logged in as admin.");
-    return;
-  }
+  const handleCreate = (e) => {
+    e.preventDefault();
+    const token = localStorage.getItem("userToken");
+    if (!token) {
+      alert("You must be logged in as admin.");
+      return;
+    }
 
-  // build product object
-  const productData = {
-    name: formData.name,
-    description: formData.description,
-    price: Number(formData.price),
-    countInStock: Number(formData.countInStock),
-    sku: formData.sku,
-    category: formData.category,
-    collections: formData.collections,
-    sizes: ["M"], 
-    colors: ["Black"],
-    images: [{ url: formData.imageUrl }],
-    brand: "UrbanStyle",     
-    material: "Fleece",     
-    gender: "Unisex",    
-    isFeatured: false,
-    isPublished: true,
-    tags: ["hoodie", "winter", "casual"],
-    dimensions: "15x12x4",
-    weight: 500,
-  };
+    // build product object
+    const productData = {
+      name: formData.name,
+      description: formData.description,
+      price: Number(formData.price),
+      countInStock: Number(formData.countInStock),
+      sku: formData.sku,
+      category: formData.category,
+      collections: formData.collections,
+      sizes: ["M"],
+      colors: ["Black"],
+      images: [{ url: formData.imageUrl }],
+      brand: "UrbanStyle",
+      material: "Fleece",
+      gender: "Unisex",
+      isFeatured: false,
+      isPublished: true,
+      tags: ["hoodie", "winter", "casual"],
+      dimensions: "15x12x4",
+      weight: 500,
+    };
 
-  dispatch(createProduct(productData)).then(() => {
-    setShowForm(false);
-    setFormData({
-      name: "",
-      sku: "",
-      price: "",
-      countInStock: "",
-      category: "",
-      collections: "General",
-      description: "",
-      imageUrl: "",
+    dispatch(createProduct(productData)).then(() => {
+      setShowForm(false);
+      setFormData({
+        name: "",
+        sku: "",
+        price: "",
+        countInStock: "",
+        category: "",
+        collections: "General",
+        description: "",
+        imageUrl: "",
+      });
+      dispatch(fetchAdminProducts()); // refresh list
     });
-    dispatch(fetchAdminProducts()); // refresh list
-  });
-};
-
+  };
 
   // delete product
   const handleDelete = (id) => {
@@ -206,7 +206,7 @@ const handleCreate = (e) => {
 
       {/* Products Table */}
       {loading ? (
-        <p>Loading...</p>
+        <Loader />
       ) : error ? (
         <p className="text-red-500">{error}</p>
       ) : (
@@ -247,10 +247,7 @@ const handleCreate = (e) => {
                 ))
               ) : (
                 <tr>
-                  <td
-                    colSpan={4}
-                    className="p-4 text-center text-gray-500"
-                  >
+                  <td colSpan={4} className="p-4 text-center text-gray-500">
                     No Products found.
                   </td>
                 </tr>

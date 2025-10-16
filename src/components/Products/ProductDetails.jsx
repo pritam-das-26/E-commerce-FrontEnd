@@ -1,4 +1,4 @@
-import { act, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { toast } from "sonner";
 import ProductGrid from "./ProductGrid";
 import { useParams } from "react-router-dom";
@@ -8,6 +8,7 @@ import {
   fetchSimilarProducts,
 } from "../../redux/slices/productsSlice";
 import { addToCart } from "../../redux/slices/cartSlice";
+import Loader from "../Loader";
 
 const ProductDetails = ({ productId }) => {
   const { id } = useParams();
@@ -88,7 +89,7 @@ const ProductDetails = ({ productId }) => {
   };
 
   if (loading) {
-    return <p>Loading...</p>;
+    return <Loader />;
   }
 
   if (error) {

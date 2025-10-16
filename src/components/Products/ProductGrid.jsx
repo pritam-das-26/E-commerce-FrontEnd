@@ -1,8 +1,9 @@
 import { Link } from "react-router-dom";
+import Loader from "../Loader";
 
 const ProductGrid = ({ products, loading, error }) => {
   if (loading) {
-    return <p>Loading...</p>;
+    return <Loader />;
   }
 
   if (error) {
