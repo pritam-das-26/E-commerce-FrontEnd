@@ -150,7 +150,7 @@ const ProductDetails = ({ productId }) => {
                 {selectedProduct.originalPrice}
               </p>
               <p className="mb-2 text-xl text-gray-500">
-                {selectedProduct.price}
+                ${selectedProduct.price}
               </p>
               <p className="mb-4 text-gray-600">
                 {selectedProduct.description}
@@ -227,17 +227,17 @@ const ProductDetails = ({ productId }) => {
                 {isButtonDisabled ? "Adding..." : "Add to Cart"}
               </button>
 
-              {/* Charactersistics section */}
+              {/* Characteristics section */}
               <div className="mt-10 text-gray-700">
                 <h3 className="mb-4 text-xl font-bold">Characteristics</h3>
                 <table className="w-full text-sm text-left text-gray-600">
                   <tbody>
                     <tr>
-                      <td className="py-1">Brand</td>
+                      <td className="py-1">Brand: </td>
                       <td className="py-1">{selectedProduct.brand}</td>
                     </tr>
                     <tr>
-                      <td className="py-1">Material</td>
+                      <td className="py-1">Material: </td>
                       <td className="py-1">{selectedProduct.material}</td>
                     </tr>
                   </tbody>

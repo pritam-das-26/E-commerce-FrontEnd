@@ -11,18 +11,6 @@ const NewArrivals = () => {
   const newArrivals = [
     {
       _id: "1",
-      name: "Stylish Jacket",
-      price: 120,
-      images: [
-        {
-          url: "https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcRHqvaLtfCRLPWwEL5QjsSn-0d6_mgHGFuSE5h_xUOX8OnTIKaLRw9C_cCqxHplb-T6tFlq9n10B6mZI5zr__drJ_yPl9kq4EFhIgObkrTjCEdg29t1JvCYBA",
-          altText: "Stylish Jacket",
-        },
-      ],
-    },
-
-    {
-      _id: "2",
       name: "Blazer",
       price: 120,
       images: [
@@ -34,7 +22,7 @@ const NewArrivals = () => {
     },
 
     {
-      _id: "3",
+      _id: "2",
       name: "Denim Jacket",
       price: 120,
       images: [
@@ -46,7 +34,7 @@ const NewArrivals = () => {
     },
 
     {
-      _id: "4",
+      _id: "3",
       name: "Mandarin Collar Shirt",
       price: 120,
       images: [
@@ -58,7 +46,7 @@ const NewArrivals = () => {
     },
 
     {
-      _id: "5",
+      _id: "4",
       name: "Japanese Pant",
       price: 120,
       images: [
@@ -70,7 +58,7 @@ const NewArrivals = () => {
     },
 
     {
-      _id: "6",
+      _id: "5",
       name: "SweatShirt",
       price: 120,
       images: [
@@ -82,13 +70,24 @@ const NewArrivals = () => {
     },
 
     {
-      _id: "7",
+      _id: "6",
       name: "Hoodies",
       price: 120,
       images: [
         {
           url: "https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcTH7zOxmo84igvJbW8Rv1x7LI0TqpOdS1LM01sMyMeqA2_1BL1HrNvT9W2zBMDTJW46GeKjYa9VD1z54Yb-glaTzz4SbxIvbblV6B6EUMQ",
           altText: "Hoodies",
+        },
+      ],
+    },
+    {
+      _id: "7",
+      name: "Stylish Jacket",
+      price: 120,
+      images: [
+        {
+          url: "https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcRHqvaLtfCRLPWwEL5QjsSn-0d6_mgHGFuSE5h_xUOX8OnTIKaLRw9C_cCqxHplb-T6tFlq9n10B6mZI5zr__drJ_yPl9kq4EFhIgObkrTjCEdg29t1JvCYBA",
+          altText: "Stylish Jacket",
         },
       ],
     },
@@ -135,7 +134,7 @@ const NewArrivals = () => {
       <div className="container relative mx-auto mb-10 text-center">
         <h2 className="mb-8 text-lg text-gray-600">Explore New Arrivals</h2>
         <p className="mb-8 text-lg text-gray-600">
-          Discove the latest styles straight off the runway, freshly added to
+          Discover the latest styles straight off the runway, freshly added to
           keep your wardrobe on the cutting edge of fashion.
         </p>
 

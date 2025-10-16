@@ -11,37 +11,37 @@ const Footer = () => {
   const [message, setMessage] = useState("");
 
   const handleSubscribe = async (e) => {
-  e.preventDefault();
+    e.preventDefault();
 
-  const token = localStorage.getItem("userToken");
-  if (!token) {
-    alert("Authentication failed. Please log in again.");
-    navigate("/login"); // only works if you're using react-router
-    return;
-  }
-
-  try {
-    const res = await axios.post(
-     'http://localhost:3000/api/subscribe',
-      { email },
-      {
-        headers: {
-          Authorization: `Bearer ${token}`,
-        },
-      }
-    );
-    setMessage(res.data.message);
-    setEmail(""); // clear input after success
-  } catch (error) {
-    if (error.response && error.response.status === 401) {
-      alert("Session expired. Please log in again.");
-      navigate("/login");
-    } else {
-      setMessage(error.response?.data?.message || "Something went wrong.");
-      console.error(error);
+    const token = localStorage.getItem("userToken");
+    if (!token) {
+      alert("Authentication failed. Please log in again.");
+      navigate("/login"); // only works if you're using react-router
+      return;
     }
-  }
-};
+
+    try {
+      const res = await axios.post(
+        "http://localhost:3000/api/subscribe",
+        { email },
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        }
+      );
+      setMessage(res.data.message);
+      setEmail(""); // clear input after success
+    } catch (error) {
+      if (error.response && error.response.status === 401) {
+        alert("Session expired. Please log in again.");
+        navigate("/login");
+      } else {
+        setMessage(error.response?.data?.message || "Something went wrong.");
+        console.error(error);
+      }
+    }
+  };
   return (
     <footer className="py-12 border-t">
       <div className="container grid grid-cols-1 gap-8 px-4 mx-auto md:grid-cols-4 lg:px-0">
@@ -55,9 +55,7 @@ const Footer = () => {
             Sign up and get 10% off your first order
           </p>
           {/* Newsletter form */}
-          <form 
-          onSubmit={handleSubscribe}
-          className="flex">
+          <form onSubmit={handleSubscribe} className="flex">
             <input
               className="w-full p-3 text-sm border-t border-b border-l border-gray-300 rounded-l-md focus:outline-none focus:ring-2 focus:ring-gray-500"
               type="email"
@@ -72,9 +70,8 @@ const Footer = () => {
             >
               Subscribe
             </button>
-    
           </form>
-                  {message && <p className="mt-2 text-sm text-gray-600">{message}</p>}
+          {message && <p className="mt-2 text-sm text-gray-600">{message}</p>}
         </div>
 
         {/* Shop Links */}
@@ -173,7 +170,7 @@ const Footer = () => {
       {/* Footer Bottom */}
       <div className="container px-4 pt-6 mx-auto mt-12 border-t border-gray-200 lg:px-0">
         <p className="text-sm tracking-tighter text-center text-gray-500">
-          &copy; 2025 Your Company. All rights reserved
+          &copy; 2025 MonkeyFad. All rights reserved
         </p>
       </div>
     </footer>
