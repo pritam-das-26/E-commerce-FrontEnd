@@ -5,7 +5,7 @@ const Hero = () => {
     <section className="relative">
       <img
         src={heroImg}
-        alt="Fancy"
+        alt="MONKEYFAD"
         className="w-full h-[400px] md:h-[600px] lg:h-[750px] object-cover"
       />
 

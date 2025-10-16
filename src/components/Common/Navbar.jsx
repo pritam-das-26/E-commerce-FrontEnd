@@ -37,7 +37,7 @@ const Navbar = () => {
         {/* left logo */}
         <div>
           <Link to="/" className="text-2xl font-medium">
-            FANCY
+            MONKEYFAD
           </Link>
         </div>
 
